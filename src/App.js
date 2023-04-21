@@ -38,7 +38,9 @@ function App() {
   ]);
   const getTodos = async () => {
     console.log("getting todods");
-    const { data } = await axios.get("http://localhost:5002/api/todos/");
+    const { data } = await axios.get(
+      "https://assignment-backend-jbtk.onrender.com/api/todos/"
+    );
     let todos = data.todos;
     todos.sort((a, b) => {
       return a.orderIndex - b.orderIndex;

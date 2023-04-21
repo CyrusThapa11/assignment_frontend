@@ -11,7 +11,7 @@ const AllTodos = ({ Todos, setTodos }) => {
   // console.log("setTodos", setTodos);
   const MarkDoneTodo = async (_id) => {
     const { data } = await axios.patch(
-      `http://localhost:5002/api/todos/${_id}`,
+      `https://assignment-backend-jbtk.onrender.com/api/todos/${_id}`,
       {
         status: true,
       }
@@ -22,7 +22,7 @@ const AllTodos = ({ Todos, setTodos }) => {
   const DeleteTodo = async (_id) => {
     // DeleteTodo
     const { data } = await axios.delete(
-      `http://localhost:5002/api/todos/${_id}`
+      `https://assignment-backend-jbtk.onrender.com/api/todos/${_id}`
     );
     console.log("data in DeleteTodo ", data);
     setTodos([...data.todos]);
@@ -58,7 +58,7 @@ const AllTodos = ({ Todos, setTodos }) => {
     /**    */
     for (let i = 0; i < newTodos.length; i++) {
       let { data } = await axios.patch(
-        `http://localhost:5002/api/todos/${newTodos[i]._id}`,
+        `https://assignment-backend-jbtk.onrender.com/api/todos/${newTodos[i]._id}`,
         { ...newTodos[i] }
       );
       updatedTodo = data.todos;

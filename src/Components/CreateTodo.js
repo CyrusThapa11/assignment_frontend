@@ -14,9 +14,12 @@ const CreateTodo = ({ setTodos }) => {
     )
       return;
     console.log("getting data");
-    const { data } = await axios.post("http://localhost:5002/api/todos/", {
-      ...state,
-    });
+    const { data } = await axios.post(
+      "https://assignment-backend-jbtk.onrender.com/api/todos/",
+      {
+        ...state,
+      }
+    );
     console.log("allTodos,", data);
     setTodos(data.todos);
   };
